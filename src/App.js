@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import store from "./store/createStore";
 import { Provider } from "react-redux";
 import "./App.css";
-import BattleField from "./containers/BattleField";
+import LookUp from "./containers/LookUp";
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <BattleField />
+        <LookUp location={this.props.location} />
       </Provider>
     );
   }

@@ -3,10 +3,13 @@ const initialState = {
   maxHp: 100,
   currentHp: 100,
   damage: 10,
+  mana: 20,
   isDead: false,
   isWin: false,
+  heroClass: "Воин",
+  gold: 0,
   lastDamageTaken: 0,
-  location: "battle",
+  location: "startscreen",
   shmotki: {
     head: "шлем",
     body: "кираса",
@@ -18,12 +21,18 @@ function reducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
+    case "HERO_CREATE":
+      return { ...state, name: payload.name, heroClass: payload.heroClass, location: "home" };
+    case "HERO_CHANGE_LOCATION":
+      return { ...state, location: payload.location };
     case "HERO_SET_HP":
       return { ...state, currentHp: payload.hp };
     case "HERO_SET_DEAD":
       return { ...state, isDead: payload.dead };
     case "HERO_SET_WIN":
       return { ...state, isWin: payload.win };
+    case "HERO_MINE":
+      return { ...state, gold: state.gold + payload.gold };
     default:
       return state;
   }

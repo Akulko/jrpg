@@ -4,9 +4,9 @@ function reducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case "ADD_LOG_ENTRY":
+    case "LOG_ADD_ENTRY":
       return [...state, payload.log];
-    case "CLEAR_LOG":
+    case "LOG_CLEAR":
       return [];
     default:
       return state;

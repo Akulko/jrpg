@@ -9,7 +9,7 @@ const ButtonGroup = styled.div``;
 const Exit = styled.button``;
 const Field = styled.div``;
 
-const BattleField = ({ hero, monster, attack, entries, clearLog, enterLocation, newMonster }) => {
+const BattleField = ({ hero, monster, attack, entries, logClear, heroChangeLocation, newMonster }) => {
   return (
     <Wrapper>
       <Field>
@@ -23,9 +23,9 @@ const BattleField = ({ hero, monster, attack, entries, clearLog, enterLocation, 
         <BattleButton onClick={() => newMonster()} disabled={hero.isWin ? false : true}>
           New Monster
         </BattleButton>
-        <Exit onClick={() => enterLocation("home")}>Exit</Exit>
+        <Exit onClick={() => heroChangeLocation("home")}>Exit</Exit>
       </ButtonGroup>
-      <BattleLog entries={entries} clearLog={clearLog} />
+      <BattleLog entries={entries} logClear={logClear} />
     </Wrapper>
   );
 };

@@ -1,17 +1,16 @@
-import { enterLocation } from "../store/modules/jrpg/action";
+import { heroChangeLocation } from "../store/modules/jrpg/actions/actions";
 import { connect } from "react-redux";
 import Home from "../components/locations/Home";
 
 function mapStateToProps(state) {
   return {
-    hero: state.battle.hero,
-    location: state.battle.location
+    hero: state.hero
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    enterLocation: location => dispatch(enterLocation(location))
+    heroChangeLocation: location => dispatch(heroChangeLocation(location))
   };
 }
 
