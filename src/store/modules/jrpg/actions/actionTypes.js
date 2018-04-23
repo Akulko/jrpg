@@ -5,6 +5,7 @@ export const HERO_SET_DEAD = "HERO_SET_DEAD";
 export const HERO_SET_WIN = "HERO_SET_WIN";
 export const HERO_CHANGE_LOCATION = "HERO_CHANGE_LOCATION";
 export const HERO_MINE = "HERO_MINE";
+export const HERO_MANA_REGEN = "HERO_MANA_REGEN";
 
 // Monter actions
 export const MONSTER_SET_HP = "MONSTER_SET_HP";

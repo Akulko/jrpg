@@ -9,6 +9,7 @@ export const heroSetDead = dead => ({ type: type.HERO_SET_DEAD, payload: { dead 
 export const heroSetWin = win => ({ type: type.HERO_SET_WIN, payload: { win } });
 export const heroChangeLocation = location => ({ type: type.HERO_CHANGE_LOCATION, payload: { location } });
 export const heroMine = gold => ({ type: type.HERO_MINE, payload: { gold } });
+export const heroManaRegen = mana => ({ type: type.HERO_MANA_REGEN, payload: { mana } });
 
 // Monster
 export const monsterSetHp = hp => ({ type: type.MONSTER_SET_HP, payload: { hp } });

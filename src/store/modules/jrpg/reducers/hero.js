@@ -4,6 +4,7 @@ const initialState = {
   currentHp: 100,
   damage: 10,
   mana: 20,
+  maxMana: 20,
   isDead: false,
   isWin: false,
   heroClass: "Воин",
@@ -33,6 +34,8 @@ function reducer(state = initialState, action) {
       return { ...state, isWin: payload.win };
     case "HERO_MINE":
       return { ...state, gold: state.gold + payload.gold };
+    case "HERO_MANA_REGEN":
+      return { ...state, mana: state.mana + payload.mana };
     default:
       return state;
   }
