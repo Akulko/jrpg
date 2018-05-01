@@ -1,8 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import { injectGlobal } from "styled-components";
+import App from "./App";
+import mainbackground from "./assets/graphics/mainbackground.jpg";
+import registerServiceWorker from "./registerServiceWorker";
+import TrajanProRegular from "./assets/fonts/TrajanPro-Regular.otf";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+injectGlobal`
+  body {
+    background: url(${mainbackground});
+  }
+`;
+
+injectGlobal`
+  @font-face {
+     font-family: 'TrajanPro';
+  src: url(${TrajanProRegular});
+  }`;
+
+ReactDOM.render(<App />, document.getElementById("root"));
 registerServiceWorker();

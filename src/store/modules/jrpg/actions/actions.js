@@ -9,7 +9,26 @@ export const heroSetDead = dead => ({ type: type.HERO_SET_DEAD, payload: { dead 
 export const heroSetWin = win => ({ type: type.HERO_SET_WIN, payload: { win } });
 export const heroChangeLocation = location => ({ type: type.HERO_CHANGE_LOCATION, payload: { location } });
 export const heroMine = gold => ({ type: type.HERO_MINE, payload: { gold } });
-export const heroManaRegen = mana => ({ type: type.HERO_MANA_REGEN, payload: { mana } });
+export const heroManaRegen = mana => ({ type: type.HERO_MANA_REGEN, payload: {} });
+export const heroSetClass = (heroClass, damage, mana, strength, agility, intelligence) => ({
+  type: type.HERO_SET_CLASS,
+  payload: { heroClass, damage, mana, strength, agility, intelligence }
+});
+
+export function heroChangeClass(heroClass) {
+  return (dispatch, getState) => {
+    switch (heroClass) {
+      case "Mage":
+        return dispatch(heroSetClass(heroClass, 10, 20, 3, 3, 5));
+      case "Warrior":
+        return dispatch(heroSetClass(heroClass, 13, 10, 5, 3, 3));
+      case "Thief":
+        return dispatch(heroSetClass(heroClass, 11, 14, 3, 5, 3));
+      default:
+        return dispatch(heroSetClass(heroClass, 10, 20, 3, 3, 5));
+    }
+  };
+}
 
 // Monster
 export const monsterSetHp = hp => ({ type: type.MONSTER_SET_HP, payload: { hp } });

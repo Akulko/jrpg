@@ -1,4 +1,4 @@
-import LookUp from "../components/LookUp";
+import LookUp from "../../components/gui/LookUp";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {

@@ -1,6 +1,6 @@
-import BattleField from "../components/locations/BattleField";
+import BattleField from "../../components/locations/BattleField";
 import { connect } from "react-redux";
-import { step, logClear, heroChangeLocation, newMonster } from "../store/modules/jrpg/actions/actions";
+import { step, logClear, heroChangeLocation, newMonster } from "../../store/modules/jrpg/actions/actions";
 
 const mapStateToProps = state => {
   return {

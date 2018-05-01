@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import UnitBox from "../UnitBox";
-import BattleLog from "../Log";
+import HeroBox from "../gui/HeroBox";
+import MonsterBox from "../gui/MonsterBox";
+import BattleLog from "../gui/Log";
 
 const Wrapper = styled.div``;
 const BattleButton = styled.button``;
@@ -13,8 +14,8 @@ const BattleField = ({ hero, monster, attack, entries, logClear, heroChangeLocat
   return (
     <Wrapper>
       <Field>
-        <UnitBox name={hero.name} currentHp={hero.currentHp} maxHp={hero.maxHp} />
-        <UnitBox name={monster.name} currentHp={monster.currentHp} maxHp={monster.maxHp} />
+        <HeroBox hero={hero} />
+        <MonsterBox monster={monster} />
       </Field>
       <ButtonGroup>
         <BattleButton onClick={() => attack()} disabled={hero.isWin || hero.isDead ? true : false}>

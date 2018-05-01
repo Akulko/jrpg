@@ -1,6 +1,6 @@
-import StartScreen from "../components/StartScreen";
+import StartScreen from "../../components/locations/StartScreen";
 import { connect } from "react-redux";
-import { heroCreate } from "../store/modules/jrpg/actions/actions";
+import { heroCreate, heroChangeClass } from "../../store/modules/jrpg/actions/actions";
 
 const mapStateToProps = state => {
   return {
@@ -10,6 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    heroChangeClass: heroClass => dispatch(heroChangeClass(heroClass)),
     heroCreate: (name, heroClass) => dispatch(heroCreate(name, heroClass))
   };
 };

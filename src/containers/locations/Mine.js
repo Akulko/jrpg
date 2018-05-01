@@ -1,6 +1,6 @@
-import { heroChangeLocation, heroMine } from "../store/modules/jrpg/actions/actions";
+import { heroChangeLocation, heroMine } from "../../store/modules/jrpg/actions/actions";
 import { connect } from "react-redux";
-import Mine from "../components/locations/Mine";
+import Mine from "../../components/locations/Mine";
 
 function mapStateToProps(state) {
   return {

@@ -7,8 +7,12 @@ const initialState = {
   maxMana: 20,
   isDead: false,
   isWin: false,
-  heroClass: "Воин",
+  heroClass: "Mage",
   gold: 0,
+  level: 1,
+  strength: 3,
+  agility: 3,
+  intelligence: 5,
   lastDamageTaken: 0,
   location: "startscreen",
   shmotki: {
@@ -36,6 +40,17 @@ function reducer(state = initialState, action) {
       return { ...state, gold: state.gold + payload.gold };
     case "HERO_MANA_REGEN":
       return { ...state, mana: state.mana + payload.mana };
+    case "HERO_SET_CLASS":
+      return {
+        ...state,
+        heroClass: payload.heroClass,
+        maxHp: payload.maxHp,
+        damage: payload.damage,
+        strength: payload.strength,
+        agility: payload.agility,
+        intelligence: payload.intelligence,
+        mana: payload.mana
+      };
     default:
       return state;
   }

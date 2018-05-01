@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import store from "./store/createStore";
 import { Provider } from "react-redux";
-import "./App.css";
-import LookUp from "./containers/LookUp";
+import LookUp from "./containers/locations/LookUp";
+import BriefInfo from "./containers/BriefInfo";
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <LookUp location={this.props.location} />
+        <div>
+          <LookUp location={this.props.location} />
+          <BriefInfo hero={this.props.hero} />
+        </div>
       </Provider>
     );
   }

@@ -1,6 +1,6 @@
 import React from "react";
 //import Log from "../Log";
-import UnitBox from "../UnitBox";
+import HeroBox from "../gui/HeroBox";
 import styled from "styled-components";
 
 const Wrapper = styled.div``;
@@ -11,10 +11,7 @@ const Mana = styled.p``;
 const Library = ({ hero, heroChangeLocation, heroManaRegen }) => {
   return (
     <Wrapper>
-      <UnitBox name={hero.name} currentHp={hero.currentHp} maxHp={hero.maxHp} />
-      <Mana>
-        mana: {hero.mana} of {hero.maxMana}
-      </Mana>
+      <HeroBox hero={hero} />
       <LearnButton onClick={() => heroManaRegen(5)}>Regen Mana</LearnButton>
       <ReturnButton onClick={() => heroChangeLocation("home")}>Go Home</ReturnButton>
     </Wrapper>
